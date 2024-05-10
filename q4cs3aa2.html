@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Cedarville Cursive' rel='stylesheet'>
+    <link rel="stylesheet" href="signupform.css">
+  </head>
+    
+    <body>
+
+      <form id="signupForm" class="modal-content" action="/action_page.php">
+
+      <div class="container">
+        <h1 style="color:white;";>Sign-up</h1>
+        <p style="color:white;">Get ready to embark on an exciting academic journey at Charm School! Simply fill out our sign-up form and let the adventure begin!</p>
+        <hr>
+
+      <fieldset>
+
+        <legend>User Credentials</legend>
+
+          <label for="name"><b style="color:white;">Name</b></label>
+          <input type="text" id="name" placeholder="Enter Name" name="name" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <label for="username"><b style="color:white;">Username</b></label>
+          <input type="text" id="username" placeholder="Enter username" name="username" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <label for="gender"><b style="color:white;">Gender</b></label>
+            <select name="yourgender" id="gender" class="gender-select">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="preference">Prefer not to mention</option>
+            </select>
+
+          <label for="password"><b style="color:white;">Password</b></label>
+          <input type="password" id="password" placeholder="Enter password" name="password" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <label for="email"><b style="color:white;">Email</b></label>
+          <input type="email" id="email" placeholder="Enter email" name="email" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <label for="address"><b style="color:white;">Address</b></label>
+          <input type="text" id="address" placeholder="Enter address" name="address" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <label for="interest"><b style="color:white;">Interests</b></label>
+          <input type="text" id="interest" placeholder="Enter interest" name="interest" required onblur="checkInput(this)" onfocus="resetColor(this)">
+
+          <input type="submit" id="mySubmit" formaction="q4cs3aa2output.html" value="Submit form">
+
+      </fieldset>
+                    
+        <div class="clearfix">
+          <button type="button" onclick="resetForm()" class="cancelbtn">Reset</button>
+          <button type="button" class="signupbtn">Sign-up</button>
+        </div>
+      </div>
+      </form>
+                    
+      <fieldset>
+
+      <legend>Information Summary</legend>
+        <div id="userInfo"></div>
+      
+      </fieldset>
+
+      <script>
+
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+
+          event.preventDefault();
+          var formData = new FormData(this);
+          var userInfo = "";
+
+          for (var pair of formData.entries()) {
+              userInfo += "<strong>" + pair[0] + ":<strong> " + pair[1] + "</br>";
+          }
+
+            document.getElementById("userInfo").innerHTML = userInfo;
+          });
+
+        function resetForm() {
+
+          document.getElementById("signupForm").reset();
+          document.getElementById("userInfo").innerHTML = "";
+          
+        }
+        
+        function checkInput(inputElement) {
+          
+          if (inputElement.value === "") {
+            inputElement.classList.add("error");
+
+          } else {
+            inputElement.classList.remove("error");
+            inputElement.classList.add("success");
+          }
+
+          }
+          
+          function resetColor(inputElement) {
+
+            inputElement.classList.remove("error");
+            inputElement.classList.add("success");
+
+          }
+          
+          function resetForm() {
+
+            document.getElementById("signupForm").reset();
+            document.getElementById("userInfo").innerHTML ="";
+
+            var inputElements = document.getElementsByTagName("input");
+
+            for (var i = 0; i < inputElements.length; i++) {
+            }
+          }
+      </script>
+    </body>
+</html>

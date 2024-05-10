@@ -1,0 +1,104 @@
+      body {
+        font-family: 'Cedarville Cursive';
+        background-image: url("pinkflowers\ \(1\).jpg");
+        background-repeat: repeat-y;
+        background-size: 100%;
+        background-color: #da9caa;
+        color: white;
+        border: white;
+      }
+      
+      .container {
+        background-color: #da9cac6b;
+        border: 2px solid #bd6279;
+        border-radius: 10px;
+        padding: 16px;
+        display: flex; 
+        flex-direction: column; 
+        height: 10%;
+        width: 500px;
+        margin: auto;
+        transform: scale(0.8); /* Adjust percentage to achieve desired size */
+      }
+      .container > * {
+        flex-grow: 1;
+      }
+      
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 50%;
+        overflow: auto;
+        background-color: #a84ba4;
+        margin: 5% auto 15% auto;
+        border: 1px solid #000;
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+        border-radius: 5px; /* Add rounded corners */
+      }
+      
+      h1, h2 {
+        color: white;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 95%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 3px; /* Add rounded corners */
+      }
+      
+      input[type="submit"],
+      button {
+        background-color: lightgreen; 
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .gender-select {
+        width: 99%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 3px; 
+      }
+      input[type="submit"]:hover,
+      button:hover {
+        opacity: 0.8;
+      }
+      
+      .cancelbtn,
+      .signupbtn { 
+        background-color: #ce7ab8; 
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 4px; 
+        cursor: pointer;
+        width: 50%;
+        margin-top: 10px;
+        float: left;
+      }
+      fieldset {
+        border-color: white;
+      }   
